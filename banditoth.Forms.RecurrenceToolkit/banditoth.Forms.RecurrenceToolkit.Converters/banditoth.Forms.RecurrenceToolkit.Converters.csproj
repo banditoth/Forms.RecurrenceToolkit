@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <PackOnBuild>true</PackOnBuild>
+    <PackageVersion>1.0</PackageVersion>
+    <Authors>banditoth</Authors>
+    <Copyright>banditoth.hu 2021</Copyright>
+    <PackageIconUrl>https://raw.githubusercontent.com/banditoth/Forms.RecurrenceToolkit/main/Files/toolkit_icon.png</PackageIconUrl>
+    <PackageLicenseUrl>https://github.com/banditoth/Forms.RecurrenceToolkit/blob/main/LICENSE</PackageLicenseUrl>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Owners>banditoth</Owners>
+    <PackageProjectUrl>https://github.com/banditoth/Forms.RecurrenceToolkit</PackageProjectUrl>
+    <PackageTags>xamarin, xamarin forms, forms, converters</PackageTags>
+    <Title>banditoth.Forms.RecurrenceToolkit.Converters</Title>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="4.7.0.968" />
+    <PackageReference Include="NuGet.Build.Packaging" Version="0.2.5-dev.8">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+</Project>
