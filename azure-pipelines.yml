@@ -23,6 +23,8 @@ steps:
 - task: DotNetCoreCLI@2
   displayName: 'dotnet build'
   inputs:
+    version: '5.0.x'
+    packageType: runtime
     command: 'build'
     arguments: '--configuration $(buildConfiguration)'
     projects: '**/*.csproj'
@@ -32,6 +34,8 @@ steps:
 - task: DotNetCoreCLI@2
   displayName: "dotnet pack"
   inputs:
+    version: '5.0.x'
+    packageType: runtime
     command: 'pack'
     arguments: '--configuration $(buildConfiguration)'
     packagesToPack: '**/*.csproj'
