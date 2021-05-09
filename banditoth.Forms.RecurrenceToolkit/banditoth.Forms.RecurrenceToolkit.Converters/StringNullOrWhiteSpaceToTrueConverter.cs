@@ -5,7 +5,7 @@ using Xamarin.Forms.Xaml;
 
 namespace banditoth.Forms.RecurrenceToolkit.Converters
 {
-    public class StringNullOrWhiteSpaceToFalseConverter : IValueConverter, IMarkupExtension
+    public class StringNullOrWhiteSpaceToTrueConverter : IValueConverter, IMarkupExtension
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
