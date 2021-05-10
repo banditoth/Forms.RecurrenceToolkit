@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Globalization;
-using Xamarin.Forms.Xaml;
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace banditoth.Forms.RecurrenceToolkit.Converters
 {
