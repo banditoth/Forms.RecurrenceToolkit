@@ -2,6 +2,50 @@
 
 A toolkit for Xamarin.Forms, inspired by hours of hours reimplementation of the same navigation logic, converters, and the other tools needed to build a mobile app idea.
 
+
+## banditoth.Forms.RecurrenceToolkit.MVVM
+![nuGet version](https://img.shields.io/nuget/vpre/banditoth.Forms.RecurrenceToolkit.MVVM)
+
+A ViewModel first driven MVVM Library.
+
+**Usage**
+
+Register your view and viewmodel connections in Connector.
+
+```cs
+banditoth.Forms.RecurrenceToolkit.MVVM.Connector.Register(typeof(CameraViewModel), typeof(CameraView));
+banditoth.Forms.RecurrenceToolkit.MVVM.Connector.Register(typeof(MainPageViewModel), typeof(MainPageView));
+```
+
+Get rid of using the Application.Current.MainPage property. Go to your app.xaml.cs file, and replace MainPage = new MainPage(); code with the following
+
+```cs
+banditoth.Forms.RecurrenceToolkit.MVVM.Navigator.Instance.SetRoot(Connector.CreateInstance<MainPageViewModel>());
+```
+
+If you want to pass parameters to the view or the viewmodels, you can do by adding init action to the CreateInstance method.
+
+```cs
+Connector.CreateInstance<MainPageViewModel>((viewModel, view) => { viewModel.Foo(); view.Bar(); });
+```
+
+To access Xamarin Forms Navigation, use:
+
+```cs
+Navigator.Navigation.PushModalAsync(Connector.CreateInstance<CameraViewModel>());
+Navigator.Navigation.PushAsync(Connector.CreateInstance<CameraViewModel>());
+Navigator.Navigation.PopModalAsync();
+Navigator.Navigation.PopAsync();
+// And so on.
+```
+
+If your application has been trayed, and get back, you can return the user to the last View, by calling:
+
+```cs
+banditoth.Forms.RecurrenceToolkit.MVVM.Navigator.Instance.GetRoot();
+```
+
+
 ## banditoth.Forms.RecurrenceToolkit.Multilanguage
 ![nuGet version](https://img.shields.io/nuget/vpre/banditoth.Forms.RecurrenceToolkit.Multilanguage)
 
