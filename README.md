@@ -1,5 +1,7 @@
 # Forms.RecurrenceToolkit
 
+![RecurrenceToolkit Icon](https://github.com/banditoth/Forms.RecurrenceToolkit/blob/main/Files/toolkit_icon.png?raw=true)
+
 A toolkit for Xamarin.Forms, inspired by hours of hours reimplementation of the same navigation logic, converters, and the other tools needed to build a mobile app idea.
 
 
