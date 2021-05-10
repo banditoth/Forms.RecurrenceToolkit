@@ -6,20 +6,32 @@
     <PackageVersion>1.0</PackageVersion>
     <Authors>banditoth</Authors>
     <Copyright>banditoth.hu 2021</Copyright>
-    <PackageIconUrl>https://raw.githubusercontent.com/banditoth/Forms.RecurrenceToolkit/main/Files/toolkit_icon.png</PackageIconUrl>
-    <PackageLicenseUrl>https://github.com/banditoth/Forms.RecurrenceToolkit/blob/main/LICENSE</PackageLicenseUrl>
+    <PackageIconUrl></PackageIconUrl>
+    <PackageLicenseUrl></PackageLicenseUrl>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <Owners>banditoth</Owners>
-    <PackageProjectUrl>https://github.com/banditoth/Forms.RecurrenceToolkit</PackageProjectUrl>
+    <PackageProjectUrl>https://www.banditoth.hu/</PackageProjectUrl>
     <PackageTags>xamarin, xamarin forms, forms, converters</PackageTags>
     <Title>banditoth.Forms.RecurrenceToolkit.Converters</Title>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <RepositoryUrl>https://github.com/banditoth/Forms.RecurrenceToolkit</RepositoryUrl>
+    <RepositoryType>GitHub</RepositoryType>
+    <PackageIcon>toolkit_icon.png</PackageIcon>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
-    <PackageReference Include="NuGet.Build.Packaging" Version="0.2.5-dev.8">
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      <PrivateAssets>all</PrivateAssets>
-    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\Files\toolkit_icon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="..\..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 </Project>
