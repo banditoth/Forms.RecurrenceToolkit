@@ -35,12 +35,9 @@ namespace banditoth.Forms.RecurrenceToolkit.MVVM
             });
         }
 
-        public void GetRoot()
+        public Page GetRoot()
         {
-            Xamarin.Essentials.MainThread.InvokeOnMainThreadAsync(() =>
-            {
-                Application.Current.MainPage = _lastMainPage;
-            });
+            return _lastMainPage;
         }
     }
 
