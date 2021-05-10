@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFramework>netstandard2.1</TargetFramework>
@@ -11,7 +11,7 @@
 		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
 		<Owners>banditoth</Owners>
 		<PackageProjectUrl>https://www.banditoth.hu/</PackageProjectUrl>
-		<PackageTags>xamarin, xamarin forms, forms, converters</PackageTags>
+		<PackageTags>xamarin, xamarin forms, forms, Multilanguage</PackageTags>
 		<Title>banditoth.Forms.RecurrenceToolkit.Multilanguage</Title>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<RepositoryUrl>https://github.com/banditoth/Forms.RecurrenceToolkit</RepositoryUrl>
