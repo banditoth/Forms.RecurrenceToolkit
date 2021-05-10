@@ -4,6 +4,7 @@ A toolkit for Xamarin.Forms, inspired by hours of hours reimplementation of the 
 
 ## banditoth.Forms.RecurrenceToolkit.Converters
 ![nuGet version](https://img.shields.io/nuget/vpre/banditoth.Forms.RecurrenceToolkit.Converters)
+
 Handy XAML Value converter collection. See the repository for the full list.
 
 -- Usage --
