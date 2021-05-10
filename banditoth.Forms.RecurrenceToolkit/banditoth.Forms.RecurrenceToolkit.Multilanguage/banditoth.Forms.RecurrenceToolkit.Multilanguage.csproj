@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.1</TargetFramework>
+		<PackOnBuild>true</PackOnBuild>
+		<PackageVersion>1.0</PackageVersion>
+		<Authors>banditoth</Authors>
+		<Copyright>banditoth.hu 2021</Copyright>
+		<PackageIconUrl></PackageIconUrl>
+		<PackageLicenseUrl></PackageLicenseUrl>
+		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+		<Owners>banditoth</Owners>
+		<PackageProjectUrl>https://www.banditoth.hu/</PackageProjectUrl>
+		<PackageTags>xamarin, xamarin forms, forms, converters</PackageTags>
+		<Title>banditoth.Forms.RecurrenceToolkit.Multilanguage</Title>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<RepositoryUrl>https://github.com/banditoth/Forms.RecurrenceToolkit</RepositoryUrl>
+		<RepositoryType>GitHub</RepositoryType>
+		<PackageIcon>toolkit_icon.png</PackageIcon>
+		<PackageLicenseFile>LICENSE</PackageLicenseFile>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
+		<PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="..\..\Files\toolkit_icon.png">
+			<Pack>True</Pack>
+			<PackagePath></PackagePath>
+		</None>
+		<None Include="..\..\LICENSE">
+			<Pack>True</Pack>
+			<PackagePath></PackagePath>
+		</None>
+	</ItemGroup>
+</Project>
