@@ -3,6 +3,7 @@
 A toolkit for Xamarin.Forms, inspired by hours of hours reimplementation of the same navigation logic, converters, and the other tools needed to build a mobile app idea.
 
 ## banditoth.Forms.RecurrenceToolkit.Multilanguage
+![nuGet version](https://img.shields.io/nuget/vpre/banditoth.Forms.RecurrenceToolkit.Multilanguage)
 
 A multilanguage translation provider for XAML, and for code behind.
 
