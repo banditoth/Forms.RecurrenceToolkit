@@ -4,6 +4,8 @@
 
 A toolkit for Xamarin.Forms, inspired by hours of hours reimplementation of the same navigation logic, converters, and the other tools needed to build a mobile app idea.
 
+Follow my Xamarin development experiences @ https://www.banditoth.hu/
+
 
 ## banditoth.Forms.RecurrenceToolkit.MVVM
 ![nuGet version](https://img.shields.io/nuget/vpre/banditoth.Forms.RecurrenceToolkit.MVVM)
