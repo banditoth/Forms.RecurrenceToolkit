@@ -10,12 +10,12 @@ namespace banditoth.Forms.RecurrenceToolkit.MVVM
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        internal void NotifyPropertyChanged([CallerMemberName] string propertyName = null)
+        protected void NotifyPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        internal void SetProperty<T>(ref T backfield, T value, [CallerMemberName] string propertyName = null)
+        protected void SetProperty<T>(ref T backfield, T value, [CallerMemberName] string propertyName = null)
         {
             if (backfield?.Equals(value) == true)
                 return;
