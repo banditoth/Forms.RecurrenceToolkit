@@ -19,10 +19,12 @@
 		<RepositoryType>GitHub</RepositoryType>
 		<PackageIcon>toolkit_icon.png</PackageIcon>
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
-		<PackageVersion>1.1</PackageVersion>
-		<Version>1.1</Version>
-		<AssemblyVersion>1.1</AssemblyVersion>
-		<FileVersion>1.1</FileVersion>
+		<PackageVersion>1.1.1</PackageVersion>
+		<Version>1.1.1</Version>
+		<AssemblyVersion>1.1.1</AssemblyVersion>
+		<FileVersion>1.1.1</FileVersion>
+		<Summary>A Xamarin.Forms firendly, handy XAML Value converter collection.</Summary>
+		<Description>A Xamarin.Forms firendly, handy XAML Value converter collection.</Description>
 	</PropertyGroup>
 	<ItemGroup>
 		<PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
