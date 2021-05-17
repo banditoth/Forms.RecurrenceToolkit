@@ -1,0 +1,2 @@
+﻿1.1.0 | 2021.05.17 | banditoth | Applies to all packages:
+- Changed assembly target framework to .NETStandard 2.0 from 2.1

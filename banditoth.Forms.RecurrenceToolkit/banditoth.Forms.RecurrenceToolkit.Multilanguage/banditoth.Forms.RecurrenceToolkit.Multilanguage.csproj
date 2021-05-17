@@ -3,7 +3,6 @@
 	<PropertyGroup>
 		<TargetFramework>netstandard2.0</TargetFramework>
 		<PackOnBuild>true</PackOnBuild>
-		<PackageVersion>1.0</PackageVersion>
 		<Authors>banditoth</Authors>
 		<Copyright>banditoth.hu 2021</Copyright>
 		<PackageIconUrl></PackageIconUrl>
@@ -18,9 +17,10 @@
 		<RepositoryType>GitHub</RepositoryType>
 		<PackageIcon>toolkit_icon.png</PackageIcon>
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
-		<Version>1.0.2</Version>
-		<AssemblyVersion>1.0.2.0</AssemblyVersion>
-		<FileVersion>1.0.2.1</FileVersion>
+		<PackageVersion>1.1</PackageVersion>
+		<Version>1.1</Version>
+		<AssemblyVersion>1.1</AssemblyVersion>
+		<FileVersion>1.1</FileVersion>
 	</PropertyGroup>
 
 	<ItemGroup>
