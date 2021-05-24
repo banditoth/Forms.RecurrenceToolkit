@@ -10,7 +10,5 @@ namespace AOPTester
             TesterClass classNew = new TesterClass();
             classNew.ExampleMethod();
         }
-
-
     }
 }

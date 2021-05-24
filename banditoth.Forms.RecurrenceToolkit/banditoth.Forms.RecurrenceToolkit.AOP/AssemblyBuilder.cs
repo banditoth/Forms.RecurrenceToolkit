@@ -6,11 +6,16 @@ using Mono.Cecil;
 using Mono.Cecil.Cil;
 using Microsoft.Build.Utilities;
 using Microsoft.Build.Framework;
+using System.Threading;
 
 namespace banditoth.Forms.RecurrenceToolkit.AOP
 {
     public class AssemblyBuilder : Task
     {
+        public AssemblyBuilder()
+        {
+        }
+
         [Required]
         public string AssemblyFileName { get; set; }
 
@@ -24,58 +29,60 @@ namespace banditoth.Forms.RecurrenceToolkit.AOP
                 return false;
             }
 
-            ModuleDefinition module = ModuleDefinition.ReadModule(AssemblyFileName);
-
-            if (module == null)
+            using (ModuleDefinition module = ModuleDefinition.ReadModule(AssemblyFileName, new ReaderParameters() { ReadWrite = true }))
             {
-                // LOG
-                throw new Exception();
-            }
-
-            if (module.HasTypes == false)
-            {
-                // LOG
-                throw new Exception();
-            }
-
-
-
-            foreach (var type in module.Types)
-            {
-                if (type.HasMethods == false)
-                    continue;
-
-                foreach (var method in type.Methods)
+                if (module == null)
                 {
-                    if (method.HasCustomAttributes == false)
+                    // LOG
+                    throw new Exception();
+                }
+
+                if (module.HasTypes == false)
+                {
+                    // LOG
+                    throw new Exception();
+                }
+
+
+
+                foreach (var type in module.Types)
+                {
+                    if (type.HasMethods == false)
                         continue;
 
-                    if (method.HasBody == false)
-                        continue;
-
-                    foreach (var attribute in method.CustomAttributes)
+                    foreach (var method in type.Methods)
                     {
-                        if (attribute.AttributeType is TypeDefinition typeDef)
+                        if (method.HasCustomAttributes == false)
+                            continue;
+
+                        if (method.HasBody == false)
+                            continue;
+
+                        foreach (var attribute in method.CustomAttributes)
                         {
-                            if (typeDef.HasInterfaces == false)
-                                continue;
-
-                            if (typeDef.Interfaces.Any(z => z.InterfaceType.FullName == typeof(IMethodInterceptor).FullName))
+                            if (attribute.AttributeType is TypeDefinition typeDef)
                             {
-                                MethodDefinition onEnterMethod = typeDef.Methods.Single(z => z.Name == nameof(IMethodInterceptor.OnEnter));
-                                MethodDefinition onExitMethod = typeDef.Methods.Single(z => z.Name == nameof(IMethodInterceptor.OnExit));
+                                if (typeDef.HasInterfaces == false)
+                                    continue;
 
-                                var processor = method.Body.GetILProcessor();
+                                if (typeDef.Interfaces.Any(z => z.InterfaceType.FullName == typeof(IMethodInterceptor).FullName))
+                                {
+                                    MethodDefinition onEnterMethod = typeDef.Methods.Single(z => z.Name == nameof(IMethodInterceptor.OnEnter));
+                                    MethodDefinition onExitMethod = typeDef.Methods.Single(z => z.Name == nameof(IMethodInterceptor.OnExit));
 
-                                processor.InsertBefore(method.Body.Instructions.First(), processor.Create(OpCodes.Call, onEnterMethod));
-                                processor.InsertAfter(method.Body.Instructions.Last(), processor.Create(OpCodes.Call, onExitMethod));
+                                    var processor = method.Body.GetILProcessor();
+
+                                    processor.InsertBefore(method.Body.Instructions.First(), processor.Create(OpCodes.Call, onEnterMethod));
+                                    processor.InsertAfter(method.Body.Instructions.Last(), processor.Create(OpCodes.Call, onExitMethod));
+                                }
                             }
                         }
                     }
                 }
+
+                module.Write(AssemblyFileName);
             }
 
-            module.Write(AssemblyFileName);
             return true;
         }
     }
