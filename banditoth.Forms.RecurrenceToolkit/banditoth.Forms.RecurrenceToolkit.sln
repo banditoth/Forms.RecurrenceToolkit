@@ -20,8 +20,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tester", "Tester", "{4C6879
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AOPTester", "AOPTester\AOPTester.csproj", "{6026E6BA-2B80-40EA-85DF-ED048931EEBC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheAssembly", "AOPTester\TheAssembly\TheAssembly.csproj", "{55291D2C-A598-4F6B-A65F-1DCFC4C365BC}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,10 +46,6 @@ Global
 		{6026E6BA-2B80-40EA-85DF-ED048931EEBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6026E6BA-2B80-40EA-85DF-ED048931EEBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6026E6BA-2B80-40EA-85DF-ED048931EEBC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{55291D2C-A598-4F6B-A65F-1DCFC4C365BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{55291D2C-A598-4F6B-A65F-1DCFC4C365BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{55291D2C-A598-4F6B-A65F-1DCFC4C365BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{55291D2C-A598-4F6B-A65F-1DCFC4C365BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -61,6 +55,5 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{6026E6BA-2B80-40EA-85DF-ED048931EEBC} = {4C687931-7210-4B72-A9E7-0875BDBA7407}
-		{55291D2C-A598-4F6B-A65F-1DCFC4C365BC} = {4C687931-7210-4B72-A9E7-0875BDBA7407}
 	EndGlobalSection
 EndGlobal

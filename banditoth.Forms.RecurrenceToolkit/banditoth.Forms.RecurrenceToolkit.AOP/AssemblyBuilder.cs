@@ -4,28 +4,35 @@ using System.Linq;
 using banditoth.Forms.RecurrenceToolkit.AOP.Interfaces;
 using Mono.Cecil;
 using Mono.Cecil.Cil;
+using Microsoft.Build.Utilities;
+using Microsoft.Build.Framework;
 
 namespace banditoth.Forms.RecurrenceToolkit.AOP
 {
-    public class AssemblyBuilder
+    public class AssemblyBuilder : Task
     {
-        public void Process(string assemblyFileName)
+        [Required]
+        public string AssemblyFileName { get; set; }
+
+        public override bool Execute()
         {
-            if(File.Exists(assemblyFileName) == false)
+            Log.LogMessage(MessageImportance.High, "Invoking assembly rewriting for: " + AssemblyFileName);
+
+            if (File.Exists(AssemblyFileName) == false)
             {
-                // LOG
-                return;
+                Log.LogError("Could not find assembly with name: " + AssemblyFileName);
+                return false;
             }
 
-            ModuleDefinition module = ModuleDefinition.ReadModule(assemblyFileName);
+            ModuleDefinition module = ModuleDefinition.ReadModule(AssemblyFileName);
 
-            if(module == null)
+            if (module == null)
             {
                 // LOG
                 throw new Exception();
             }
 
-            if(module.HasTypes == false)
+            if (module.HasTypes == false)
             {
                 // LOG
                 throw new Exception();
@@ -44,16 +51,16 @@ namespace banditoth.Forms.RecurrenceToolkit.AOP
                         continue;
 
                     if (method.HasBody == false)
-                        return;
+                        continue;
 
                     foreach (var attribute in method.CustomAttributes)
                     {
-                        if(attribute.AttributeType is TypeDefinition typeDef)
+                        if (attribute.AttributeType is TypeDefinition typeDef)
                         {
                             if (typeDef.HasInterfaces == false)
                                 continue;
 
-                            if(typeDef.Interfaces.Any(z=> z.InterfaceType.FullName == typeof(IMethodInterceptor).FullName))
+                            if (typeDef.Interfaces.Any(z => z.InterfaceType.FullName == typeof(IMethodInterceptor).FullName))
                             {
                                 MethodDefinition onEnterMethod = typeDef.Methods.Single(z => z.Name == nameof(IMethodInterceptor.OnEnter));
                                 MethodDefinition onExitMethod = typeDef.Methods.Single(z => z.Name == nameof(IMethodInterceptor.OnExit));
@@ -68,7 +75,8 @@ namespace banditoth.Forms.RecurrenceToolkit.AOP
                 }
             }
 
-            module.Write(assemblyFileName + "-modified.dll");
+            module.Write(AssemblyFileName);
+            return true;
         }
     }
 }
