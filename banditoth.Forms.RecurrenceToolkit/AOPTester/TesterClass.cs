@@ -6,7 +6,7 @@ namespace AOPTester
         [SampleInterceptor]
         public void ExampleMethod()
         {
-            Console.WriteLine("wooow");
+            Console.WriteLine("wooow2");
         }
     }
 }

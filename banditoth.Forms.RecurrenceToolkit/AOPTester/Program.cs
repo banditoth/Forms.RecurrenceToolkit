@@ -7,8 +7,15 @@ namespace AOPTester
     {
         static void Main(string[] args)
         {
-            TesterClass classNew = new TesterClass();
-            classNew.ExampleMethod();
+            try
+            {
+                TesterClass classNew = new TesterClass();
+                classNew.ExampleMethod();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex?.ToString());
+            }
         }
     }
 }

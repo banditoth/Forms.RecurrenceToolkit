@@ -29,7 +29,7 @@ namespace banditoth.Forms.RecurrenceToolkit.AOP
                 return false;
             }
 
-            using (ModuleDefinition module = ModuleDefinition.ReadModule(AssemblyFileName, new ReaderParameters() { ReadWrite = true }))
+            using (ModuleDefinition module = ModuleDefinition.ReadModule(AssemblyFileName, new ReaderParameters() { ReadWrite = true, InMemory = true }))
             {
                 if (module == null)
                 {
@@ -58,22 +58,41 @@ namespace banditoth.Forms.RecurrenceToolkit.AOP
                         if (method.HasBody == false)
                             continue;
 
-                        foreach (var attribute in method.CustomAttributes)
+                        foreach (var customAttribute in method.CustomAttributes)
                         {
-                            if (attribute.AttributeType is TypeDefinition typeDef)
+                            if (customAttribute.AttributeType is TypeDefinition methodAttribute)
                             {
-                                if (typeDef.HasInterfaces == false)
+                                if (methodAttribute.HasInterfaces == false)
                                     continue;
 
-                                if (typeDef.Interfaces.Any(z => z.InterfaceType.FullName == typeof(IMethodInterceptor).FullName))
+                                if (methodAttribute.Interfaces.Any(z => z.InterfaceType.FullName == typeof(IMethodInterceptor).FullName))
                                 {
-                                    MethodDefinition onEnterMethod = typeDef.Methods.Single(z => z.Name == nameof(IMethodInterceptor.OnEnter));
-                                    MethodDefinition onExitMethod = typeDef.Methods.Single(z => z.Name == nameof(IMethodInterceptor.OnExit));
+                                    MethodDefinition onEnterMethod = methodAttribute.Methods.Single<MethodDefinition>(z => z.Name == nameof(AOP.Interfaces.IMethodInterceptor.OnEnter));
+                                    MethodDefinition onExitMethod = methodAttribute.Methods.Single<MethodDefinition>(z => z.Name == nameof(AOP.Interfaces.IMethodInterceptor.OnExit));
+                                    MethodDefinition onExceptionMethod = methodAttribute.Methods.Single<MethodDefinition>(z => z.Name == nameof(AOP.Interfaces.IMethodInterceptor.OnException));
 
                                     var processor = method.Body.GetILProcessor();
 
-                                    processor.InsertBefore(method.Body.Instructions.First(), processor.Create(OpCodes.Call, onEnterMethod));
-                                    processor.InsertAfter(method.Body.Instructions.Last(), processor.Create(OpCodes.Call, onExitMethod));
+                                    // Creating new instance of the attribute
+
+                                    // Getting constructor for attribute
+                                    MethodDefinition attributeCtor = methodAttribute.Methods.FirstOrDefault(z => z.IsConstructor == true && z.HasParameters == false);
+                                    if (attributeCtor == null)
+                                        throw new Exception($"No parameterless constructor found for attribute: " + methodAttribute.FullName);
+
+
+                                    var attributeInstance = new VariableDefinition(methodAttribute);
+                                    method.Body.Variables.Add(attributeInstance);
+
+                                    processor.InsertBefore(method.Body.Instructions.First(), processor.Create(OpCodes.Newobj, attributeCtor));
+                                    processor.InsertAfter(method.Body.Instructions.First(), processor.Create(OpCodes.Stloc, attributeInstance));
+
+                                    processor.InsertAfter(method.Body.Instructions[1], processor.Create(OpCodes.Ldloc, attributeInstance));
+                                    processor.InsertAfter(method.Body.Instructions[2], processor.Create(OpCodes.Call, onEnterMethod));
+
+                                    var lastInstruction = method.Body.Instructions.Last(z => z.OpCode == OpCodes.Nop || z.OpCode == OpCodes.Br_S);
+                                    processor.InsertAfter(lastInstruction, processor.Create(OpCodes.Ldloc, attributeInstance));
+                                    processor.InsertAfter(lastInstruction.Next, processor.Create(OpCodes.Call, onExitMethod));
                                 }
                             }
                         }
