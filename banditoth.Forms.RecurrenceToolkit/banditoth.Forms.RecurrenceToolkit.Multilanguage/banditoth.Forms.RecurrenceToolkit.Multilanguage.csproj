@@ -10,8 +10,8 @@
 		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
 		<PackageProjectUrl>https://www.banditoth.hu/</PackageProjectUrl>
 		<Title>banditoth.Forms.RecurrenceToolkit.Multilanguage</Title>
-		<Summary>A Xamarin.Forms firendly multilanguage translation provider for XAML, and for code behind.</Summary>
-		<Description>A Xamarin.Forms firendly multilanguage translation provider for XAML, and for code behind.</Description>
+		<Summary>A Xamarin.Forms friendly multilanguage translation provider for XAML, and for code behind.</Summary>
+		<Description>A Xamarin.Forms friendly multilanguage translation provider for XAML, and for code behind.</Description>
 		<PackageTags>xamarin, xamarin forms, forms, Multilanguage</PackageTags>
 		<PackageIcon>toolkit_icon.png</PackageIcon>
 		<RepositoryUrl>https://github.com/banditoth/Forms.RecurrenceToolkit</RepositoryUrl>

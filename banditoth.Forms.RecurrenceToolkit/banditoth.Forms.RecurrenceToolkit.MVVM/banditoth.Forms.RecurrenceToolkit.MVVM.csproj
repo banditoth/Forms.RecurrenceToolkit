@@ -23,8 +23,8 @@
 		<Version>1.1.3</Version>
 		<AssemblyVersion>1.1.3</AssemblyVersion>
 		<FileVersion>1.1.3</FileVersion>
-		<Summary>A Xamarin.Forms firendly ViewModel first driven MVVM Library.</Summary>
-		<Description>A Xamarin.Forms firendly ViewModel first driven MVVM Library.</Description>
+		<Summary>A Xamarin.Forms friendly ViewModel first driven MVVM Library.</Summary>
+		<Description>A Xamarin.Forms friendly ViewModel first driven MVVM Library.</Description>
 	</PropertyGroup>
 	<ItemGroup>
 		<PackageReference Include="Xamarin.Essentials" Version="1.6.1" />

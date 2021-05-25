@@ -23,8 +23,8 @@
 		<Version>1.1.1</Version>
 		<AssemblyVersion>1.1.1</AssemblyVersion>
 		<FileVersion>1.1.1</FileVersion>
-		<Summary>A Xamarin.Forms firendly, handy XAML Value converter collection.</Summary>
-		<Description>A Xamarin.Forms firendly, handy XAML Value converter collection.</Description>
+		<Summary>A Xamarin.Forms friendly, handy XAML Value converter collection.</Summary>
+		<Description>A Xamarin.Forms friendly, handy XAML Value converter collection.</Description>
 	</PropertyGroup>
 	<ItemGroup>
 		<PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
