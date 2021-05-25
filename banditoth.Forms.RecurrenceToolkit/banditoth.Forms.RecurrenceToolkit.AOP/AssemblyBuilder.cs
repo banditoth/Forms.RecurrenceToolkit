@@ -33,17 +33,17 @@ namespace banditoth.Forms.RecurrenceToolkit.AOP
             {
                 if (module == null)
                 {
-                    // LOG
+                    Log.LogError("Could not read module, it is null.");
                     throw new Exception();
                 }
 
                 if (module.HasTypes == false)
                 {
-                    // LOG
-                    throw new Exception();
+                    Log.LogWarning("This assembly has no own types");
+                    return true;
                 }
 
-
+                int modificationCount = default;
 
                 foreach (var type in module.Types)
                 {
@@ -67,29 +67,34 @@ namespace banditoth.Forms.RecurrenceToolkit.AOP
 
                                 if (methodAttribute.Interfaces.Any(z => z.InterfaceType.FullName == typeof(IMethodDecorator).FullName))
                                 {
+                                    modificationCount++;
+
                                     MethodDefinition onEnterMethod = methodAttribute.Methods.Single<MethodDefinition>(z => z.Name == nameof(AOP.Interfaces.IMethodDecorator.OnEnter));
                                     MethodDefinition onExitMethod = methodAttribute.Methods.Single<MethodDefinition>(z => z.Name == nameof(AOP.Interfaces.IMethodDecorator.OnExit));
                                     //MethodDefinition onExceptionMethod = methodAttribute.Methods.Single<MethodDefinition>(z => z.Name == nameof(AOP.Interfaces.IMethodDecorator.OnException));
 
                                     var processor = method.Body.GetILProcessor();
 
-                                    // Creating new instance of the attribute
-
-                                    // Getting constructor for attribute
+                                    // Searching for a parameterless constructor for the attribute. 
                                     MethodDefinition attributeCtor = methodAttribute.Methods.FirstOrDefault(z => z.IsConstructor == true && z.HasParameters == false);
                                     if (attributeCtor == null)
                                         throw new Exception($"No parameterless constructor found for attribute: " + methodAttribute.FullName);
 
-
+                                    // Registering the attribute type as a local variable.
                                     var attributeInstance = new VariableDefinition(methodAttribute);
                                     method.Body.Variables.Add(attributeInstance);
 
-                                    processor.InsertBefore(method.Body.Instructions.First(), processor.Create(OpCodes.Newobj, attributeCtor));
-                                    processor.InsertAfter(method.Body.Instructions.First(), processor.Create(OpCodes.Stloc, attributeInstance));
+                                    // Adding IMethodDecorator imethoddecorator = new IMethodDecorator like instruments to the method beggining
+                                    processor.InsertBefore(method.Body.Instructions.First(), processor.Create(OpCodes.Newobj, attributeCtor)); // This will be 1st
+                                    processor.InsertAfter(method.Body.Instructions.First(), processor.Create(OpCodes.Stloc, attributeInstance)); // This will be 2nd
 
-                                    processor.InsertAfter(method.Body.Instructions[1], processor.Create(OpCodes.Ldloc, attributeInstance));
-                                    processor.InsertAfter(method.Body.Instructions[2], processor.Create(OpCodes.Call, onEnterMethod));
+                                    // Invoking the onenter method on the newly created instance
+                                    processor.InsertAfter(method.Body.Instructions[1], processor.Create(OpCodes.Ldloc, attributeInstance)); //This will be 3rd
+                                    processor.InsertAfter(method.Body.Instructions[2], processor.Create(OpCodes.Call, onEnterMethod)); // Inserting after 3rd, so it will be 4th
 
+                                    // Invoking the onexit method on the newly created instance
+                                    // We have to find the really last instruction for the method. Last() is not playing, because we want to insert code
+                                    // before the return opcode.
                                     var lastInstruction = method.Body.Instructions.Last(z => z.OpCode == OpCodes.Nop || z.OpCode == OpCodes.Br_S);
                                     processor.InsertAfter(lastInstruction, processor.Create(OpCodes.Ldloc, attributeInstance));
                                     processor.InsertAfter(lastInstruction.Next, processor.Create(OpCodes.Call, onExitMethod));
@@ -98,6 +103,8 @@ namespace banditoth.Forms.RecurrenceToolkit.AOP
                         }
                     }
                 }
+
+                Log.LogMessage(MessageImportance.High, "Finished with the assembly. Total modifications: " + modificationCount);
 
                 module.Write(AssemblyFileName);
             }
