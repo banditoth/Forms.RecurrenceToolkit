@@ -1,14 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
-
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Mono.Cecil" Version="0.11.3" />
-    <PackageReference Include="Microsoft.Build.Utilities.Core" Version="16.9.0" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Interfaces\" />
-  </ItemGroup>
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<PackOnBuild>true</PackOnBuild>
+		<Authors>banditoth</Authors>
+		<Copyright>banditoth.hu 2021</Copyright>
+		<PackageIconUrl>
+		</PackageIconUrl>
+		<PackageLicenseUrl>
+		</PackageLicenseUrl>
+		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+		<Owners>banditoth</Owners>
+		<PackageProjectUrl>https://www.banditoth.hu/</PackageProjectUrl>
+		<PackageTags>xamarin, xamarin forms, forms, aop</PackageTags>
+		<Title>banditoth.Forms.RecurrenceToolkit.AOP</Title>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<RepositoryUrl>https://github.com/banditoth/Forms.RecurrenceToolkit</RepositoryUrl>
+		<RepositoryType>GitHub</RepositoryType>
+		<PackageIcon>toolkit_icon.png</PackageIcon>
+		<PackageLicenseFile>LICENSE</PackageLicenseFile>
+		<PackageVersion>1.0.0-pre-01</PackageVersion>
+		<Version>1.0.0</Version>
+		<AssemblyVersion>1.0.0</AssemblyVersion>
+		<FileVersion>1.0.0</FileVersion>
+		<Summary>A Xamarin.Forms friendly, pre-release AOP (Aspect Orientated) tool</Summary>
+		<Description>A Xamarin.Forms friendly,  pre-release AOP (Aspect Orientated) tool</Description>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="Mono.Cecil" Version="0.11.3" />
+		<PackageReference Include="Microsoft.Build.Utilities.Core" Version="16.9.0" />
+	</ItemGroup>
+	<ItemGroup>
+		<Folder Include="Interfaces\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <None Include="..\..\LICENSE">
+	    <Pack>True</Pack>
+	    <PackagePath></PackagePath>
+	    <Link>LICENSE</Link>
+	  </None>
+	  <None Include="..\..\Files\toolkit_icon.png">
+	    <Pack>True</Pack>
+	    <PackagePath></PackagePath>
+	    <Link>toolkit_icon.png</Link>
+	  </None>
+	</ItemGroup>
 </Project>
