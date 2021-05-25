@@ -49,6 +49,65 @@ If your application has been trayed, and get back, you can return the user to th
 banditoth.Forms.RecurrenceToolkit.MVVM.Navigator.Instance.GetRoot();
 ```
 
+## banditoth.Forms.RecurrenceToolkit.AOP
+![nuGet version](https://img.shields.io/nuget/vpre/banditoth.Forms.RecurrenceToolkit.AOP)
+
+A pre-release Aspect Orientated tool for Xamarin.
+
+This tool uses Mono.Cecil to modify the builded assembly. 
+Please be careful when using Assembly Signing or Code obfuscation with it.
+
+**Usage**
+
+Edit your csproj (basically the Forms project file), add the following code. 
+This will let MSBuild to execute the tool after the project is built.
+Change the Path to the build result assembly, in order to make it work.
+
+```xm
+	<UsingTask TaskName="AssemblyBuilder" AssemblyFile=".\bin\Debug\netcoreapp3.1\banditoth.Forms.RecurrenceToolkit.AOP.dll" />
+	<Target Name="AssemblyBuilder" AfterTargets="AfterBuild">
+		<AssemblyBuilder AssemblyFileName="<<<<<<< PATH TO YOUR ASSEMBLY >>>>>>>>" />
+	</Target>
+```
+
+Implement your own method-decorator, implementing IMethodDecorator, for example:
+
+```cs
+    [System.AttributeUsage(System.AttributeTargets.Method)]
+    public class ConsoleYaay : Attribute, IMethodDecorator
+    {
+        public ConsoleYaay()
+        {
+
+        }
+
+        public void OnEnter()
+        {
+            Console.WriteLine("yaaay on enter!");
+        }
+
+        public void OnExit()
+        {
+            Console.WriteLine("yaaaay on exit");
+        }
+    }
+```
+
+And use it on your methods, like:
+
+```cs
+    [ConsoleYaay]
+    public void BoringMethod()
+    {
+        Console.WriteLine(DateTime.Now);
+    }
+```
+
+**Important**
+This package is in pre-release state.
+Right now only parameterless constructors can be used for Method decorator attributes.
+Class decorators, field decorators, and assembly decorators will be implemented in future versions.
+Automatic csproj file modification (Adding the target) can be implemented too.
 
 ## banditoth.Forms.RecurrenceToolkit.Multilanguage
 ![nuGet version](https://img.shields.io/nuget/vpre/banditoth.Forms.RecurrenceToolkit.Multilanguage)
