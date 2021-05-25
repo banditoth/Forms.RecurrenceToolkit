@@ -65,11 +65,11 @@ namespace banditoth.Forms.RecurrenceToolkit.AOP
                                 if (methodAttribute.HasInterfaces == false)
                                     continue;
 
-                                if (methodAttribute.Interfaces.Any(z => z.InterfaceType.FullName == typeof(IMethodInterceptor).FullName))
+                                if (methodAttribute.Interfaces.Any(z => z.InterfaceType.FullName == typeof(IMethodDecorator).FullName))
                                 {
-                                    MethodDefinition onEnterMethod = methodAttribute.Methods.Single<MethodDefinition>(z => z.Name == nameof(AOP.Interfaces.IMethodInterceptor.OnEnter));
-                                    MethodDefinition onExitMethod = methodAttribute.Methods.Single<MethodDefinition>(z => z.Name == nameof(AOP.Interfaces.IMethodInterceptor.OnExit));
-                                    MethodDefinition onExceptionMethod = methodAttribute.Methods.Single<MethodDefinition>(z => z.Name == nameof(AOP.Interfaces.IMethodInterceptor.OnException));
+                                    MethodDefinition onEnterMethod = methodAttribute.Methods.Single<MethodDefinition>(z => z.Name == nameof(AOP.Interfaces.IMethodDecorator.OnEnter));
+                                    MethodDefinition onExitMethod = methodAttribute.Methods.Single<MethodDefinition>(z => z.Name == nameof(AOP.Interfaces.IMethodDecorator.OnExit));
+                                    //MethodDefinition onExceptionMethod = methodAttribute.Methods.Single<MethodDefinition>(z => z.Name == nameof(AOP.Interfaces.IMethodDecorator.OnException));
 
                                     var processor = method.Body.GetILProcessor();
 

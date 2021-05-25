@@ -1,11 +1,9 @@
 ﻿using System;
 namespace banditoth.Forms.RecurrenceToolkit.AOP.Interfaces
 {
-    public interface IMethodInterceptor
+    public interface IMethodDecorator
     {
         void OnEnter();
-
-        void OnException();
 
         void OnExit();
     }
