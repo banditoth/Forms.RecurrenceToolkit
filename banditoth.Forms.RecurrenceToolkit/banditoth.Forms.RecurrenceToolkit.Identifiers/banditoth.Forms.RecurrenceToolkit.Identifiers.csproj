@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<PackOnBuild>true</PackOnBuild>
+		<Authors>banditoth</Authors>
+		<Copyright>banditoth.hu 2021</Copyright>
+		<PackageIconUrl>
+		</PackageIconUrl>
+		<PackageLicenseUrl>
+		</PackageLicenseUrl>
+		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+		<Owners>banditoth</Owners>
+		<PackageProjectUrl>https://www.banditoth.hu/</PackageProjectUrl>
+		<PackageTags>xamarin, xamarin forms, forms, Identifier</PackageTags>
+		<Title>banditoth.Forms.RecurrenceToolkit.Identifiers</Title>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<RepositoryUrl>https://github.com/banditoth/Forms.RecurrenceToolkit</RepositoryUrl>
+		<RepositoryType>GitHub</RepositoryType>
+		<PackageIcon>toolkit_icon.png</PackageIcon>
+		<PackageLicenseFile>LICENSE</PackageLicenseFile>
+		<PackageVersion>1.1.1</PackageVersion>
+		<Version>1.1.1</Version>
+		<AssemblyVersion>1.1.1</AssemblyVersion>
+		<FileVersion>1.1.1</FileVersion>
+		<Summary>A Xamarin.Forms driven, unique device identifier reader and generator.</Summary>
+		<Description>A Xamarin.Forms driven, unique device identifier reader and generator.</Description>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="..\..\Files\toolkit_icon.png">
+			<Pack>True</Pack>
+			<PackagePath>
+			</PackagePath>
+		</None>
+		<None Include="..\..\LICENSE">
+			<Pack>True</Pack>
+			<PackagePath>
+			</PackagePath>
+		</None>
+	</ItemGroup>
+</Project>

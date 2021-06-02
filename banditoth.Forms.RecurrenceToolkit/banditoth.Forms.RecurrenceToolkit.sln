@@ -3,22 +3,24 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.809.6
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "banditoth.Forms.RecurrenceToolkit.Converters", "banditoth.Forms.RecurrenceToolkit.Converters\banditoth.Forms.RecurrenceToolkit.Converters.csproj", "{217FDC44-6129-4BFD-8023-48E498B3C53C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "banditoth.Forms.RecurrenceToolkit.Converters", "banditoth.Forms.RecurrenceToolkit.Converters\banditoth.Forms.RecurrenceToolkit.Converters.csproj", "{217FDC44-6129-4BFD-8023-48E498B3C53C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "banditoth.Forms.RecurrenceToolkit.Multilanguage", "banditoth.Forms.RecurrenceToolkit.Multilanguage\banditoth.Forms.RecurrenceToolkit.Multilanguage.csproj", "{F97C014C-4A9C-46BF-A3C5-41A8A4709D03}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "banditoth.Forms.RecurrenceToolkit.Multilanguage", "banditoth.Forms.RecurrenceToolkit.Multilanguage\banditoth.Forms.RecurrenceToolkit.Multilanguage.csproj", "{F97C014C-4A9C-46BF-A3C5-41A8A4709D03}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "banditoth.Forms.RecurrenceToolkit.MVVM", "banditoth.Forms.RecurrenceToolkit.MVVM\banditoth.Forms.RecurrenceToolkit.MVVM.csproj", "{EC8D43FD-95C8-43A5-B376-AAD89406F582}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "banditoth.Forms.RecurrenceToolkit.MVVM", "banditoth.Forms.RecurrenceToolkit.MVVM\banditoth.Forms.RecurrenceToolkit.MVVM.csproj", "{EC8D43FD-95C8-43A5-B376-AAD89406F582}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1173DE41-14EC-439C-9193-7C99B6E65F3C}"
 	ProjectSection(SolutionItems) = preProject
 		CHANGELOG.txt = CHANGELOG.txt
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "banditoth.Forms.RecurrenceToolkit.AOP", "banditoth.Forms.RecurrenceToolkit.AOP\banditoth.Forms.RecurrenceToolkit.AOP.csproj", "{3D580E56-C949-44C9-B64A-1498A9530DF5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "banditoth.Forms.RecurrenceToolkit.AOP", "banditoth.Forms.RecurrenceToolkit.AOP\banditoth.Forms.RecurrenceToolkit.AOP.csproj", "{3D580E56-C949-44C9-B64A-1498A9530DF5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tester", "Tester", "{4C687931-7210-4B72-A9E7-0875BDBA7407}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AOPTester", "AOPTester\AOPTester.csproj", "{6026E6BA-2B80-40EA-85DF-ED048931EEBC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AOPTester", "AOPTester\AOPTester.csproj", "{6026E6BA-2B80-40EA-85DF-ED048931EEBC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "banditoth.Forms.RecurrenceToolkit.Identifiers", "banditoth.Forms.RecurrenceToolkit.Identifiers\banditoth.Forms.RecurrenceToolkit.Identifiers.csproj", "{1042E940-31F1-4BD5-B75A-141A020B9F4F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -46,14 +48,18 @@ Global
 		{6026E6BA-2B80-40EA-85DF-ED048931EEBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6026E6BA-2B80-40EA-85DF-ED048931EEBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6026E6BA-2B80-40EA-85DF-ED048931EEBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1042E940-31F1-4BD5-B75A-141A020B9F4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1042E940-31F1-4BD5-B75A-141A020B9F4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1042E940-31F1-4BD5-B75A-141A020B9F4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1042E940-31F1-4BD5-B75A-141A020B9F4F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {437A9DF7-02A7-473D-BB1A-D3B1A0AE3984}
-	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{6026E6BA-2B80-40EA-85DF-ED048931EEBC} = {4C687931-7210-4B72-A9E7-0875BDBA7407}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {437A9DF7-02A7-473D-BB1A-D3B1A0AE3984}
 	EndGlobalSection
 EndGlobal
