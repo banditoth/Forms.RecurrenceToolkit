@@ -164,6 +164,18 @@ Use the converters on bindings:
 IsVisible="{Binding Path=NullableData, Converter={converters:NullToFalseConverter}}"
 ```
 
+## banditoth.Forms.RecurrenceToolkit.Identifiers
+![nuGet version](https://img.shields.io/nuget/vpre/banditoth.Forms.RecurrenceToolkit.Identifiers)
+
+Generates an unique identifier for the application, which will be stored until the application is being reinstalled, or the application's data being erased.
+Further improvements: - Read existing permanent identifiers from the OS.
+
+**Usage**
+
+```cs
+string id = banditoth.Forms.RecurrenceToolkit.Identifiers.IdentifierProvider.UniqueId;
+```
+
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
