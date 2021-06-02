@@ -6,6 +6,15 @@ A toolkit for Xamarin.Forms, inspired by hours of hours reimplementation of the 
 
 Follow my Xamarin development experiences @ https://www.banditoth.hu/
 
+**Packages**
+
+| Package name | NuGet status |
+| --- | --- |
+| banditoth.Forms.RecurrenceToolkit.MVVM | ![nuGet version](https://img.shields.io/nuget/vpre/banditoth.Forms.RecurrenceToolkit.MVVM) |
+| banditoth.Forms.RecurrenceToolkit.AOP | ![nuGet version](https://img.shields.io/nuget/vpre/banditoth.Forms.RecurrenceToolkit.AOP) |
+| banditoth.Forms.RecurrenceToolkit.Multilanguage | ![nuGet version](https://img.shields.io/nuget/vpre/banditoth.Forms.RecurrenceToolkit.Multilanguage) |
+| banditoth.Forms.RecurrenceToolkit.Converters | ![nuGet version](https://img.shields.io/nuget/vpre/banditoth.Forms.RecurrenceToolkit.Converters) |
+| banditoth.Forms.RecurrenceToolkit.Identifiers | ![nuGet version](https://img.shields.io/nuget/vpre/banditoth.Forms.RecurrenceToolkit.Identifiers) |
 
 ## banditoth.Forms.RecurrenceToolkit.MVVM
 ![nuGet version](https://img.shields.io/nuget/vpre/banditoth.Forms.RecurrenceToolkit.MVVM)
