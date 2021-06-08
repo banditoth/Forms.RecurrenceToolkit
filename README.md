@@ -15,6 +15,7 @@ Follow my Xamarin development experiences @ https://www.banditoth.hu/
 | banditoth.Forms.RecurrenceToolkit.Multilanguage | ![nuGet version](https://img.shields.io/nuget/vpre/banditoth.Forms.RecurrenceToolkit.Multilanguage) |
 | banditoth.Forms.RecurrenceToolkit.Converters | ![nuGet version](https://img.shields.io/nuget/vpre/banditoth.Forms.RecurrenceToolkit.Converters) |
 | banditoth.Forms.RecurrenceToolkit.Identifiers | ![nuGet version](https://img.shields.io/nuget/vpre/banditoth.Forms.RecurrenceToolkit.Identifiers) |
+| banditoth.Forms.RecurrenceToolkit.Logging | ![nuGet version](https://img.shields.io/nuget/vpre/banditoth.Forms.RecurrenceToolkit.Logging) |
 
 ## banditoth.Forms.RecurrenceToolkit.MVVM
 ![nuGet version](https://img.shields.io/nuget/vpre/banditoth.Forms.RecurrenceToolkit.MVVM)
