@@ -6,6 +6,15 @@ A toolkit for Xamarin.Forms, inspired by hours of hours reimplementation of the 
 
 Follow my Xamarin development experiences @ https://www.banditoth.hu/
 
+**Packages**
+
+| Package name | NuGet status |
+| --- | --- |
+| banditoth.Forms.RecurrenceToolkit.MVVM | ![nuGet version](https://img.shields.io/nuget/vpre/banditoth.Forms.RecurrenceToolkit.MVVM) |
+| banditoth.Forms.RecurrenceToolkit.AOP | ![nuGet version](https://img.shields.io/nuget/vpre/banditoth.Forms.RecurrenceToolkit.AOP) |
+| banditoth.Forms.RecurrenceToolkit.Multilanguage | ![nuGet version](https://img.shields.io/nuget/vpre/banditoth.Forms.RecurrenceToolkit.Multilanguage) |
+| banditoth.Forms.RecurrenceToolkit.Converters | ![nuGet version](https://img.shields.io/nuget/vpre/banditoth.Forms.RecurrenceToolkit.Converters) |
+| banditoth.Forms.RecurrenceToolkit.Identifiers | ![nuGet version](https://img.shields.io/nuget/vpre/banditoth.Forms.RecurrenceToolkit.Identifiers) |
 
 ## banditoth.Forms.RecurrenceToolkit.MVVM
 ![nuGet version](https://img.shields.io/nuget/vpre/banditoth.Forms.RecurrenceToolkit.MVVM)
@@ -162,6 +171,18 @@ xmlns:converters="clr-namespace:banditoth.Forms.RecurrenceToolkit.Converters"
 Use the converters on bindings:
 ```XAML
 IsVisible="{Binding Path=NullableData, Converter={converters:NullToFalseConverter}}"
+```
+
+## banditoth.Forms.RecurrenceToolkit.Identifiers
+![nuGet version](https://img.shields.io/nuget/vpre/banditoth.Forms.RecurrenceToolkit.Identifiers)
+
+Generates an unique identifier for the application, which will be stored until the application is being reinstalled, or the application's data being erased.
+Further improvements: - Read existing permanent identifiers from the OS.
+
+**Usage**
+
+```cs
+string id = banditoth.Forms.RecurrenceToolkit.Identifiers.IdentifierProvider.UniqueId;
 ```
 
 ## Contributing
