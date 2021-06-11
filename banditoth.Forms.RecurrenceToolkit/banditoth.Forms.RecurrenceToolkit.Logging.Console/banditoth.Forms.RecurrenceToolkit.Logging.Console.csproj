@@ -27,7 +27,7 @@
     <Description>A Xamarin.Forms friendly, console logger.</Description>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="banditoth.Forms.RecurrenceToolkit.Logging" Version="1.0.0" />
+    <PackageReference Include="banditoth.Forms.RecurrenceToolkit.Logging" Version="1.0.1" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\Files\toolkit_icon.png">
