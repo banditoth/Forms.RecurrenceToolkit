@@ -24,7 +24,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "banditoth.Forms.RecurrenceT
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "banditoth.Forms.RecurrenceToolkit.Logging", "banditoth.Forms.RecurrenceToolkit.Logging\banditoth.Forms.RecurrenceToolkit.Logging.csproj", "{E15E23AA-9121-49A1-82C7-CEECAA902885}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "banditoth.Forms.RecurrenceToolkit.Logging.Console", "banditoth.Forms.RecurrenceToolkit.Logging.Console\banditoth.Forms.RecurrenceToolkit.Logging.Console.csproj", "{1C2DC088-E584-4994-80C9-C6C58AA254EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "banditoth.Forms.RecurrenceToolkit.Logging.Console", "banditoth.Forms.RecurrenceToolkit.Logging.Console\banditoth.Forms.RecurrenceToolkit.Logging.Console.csproj", "{1C2DC088-E584-4994-80C9-C6C58AA254EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "banditoth.Forms.RecurrenceToolkit.Logging.SQLite", "banditoth.Forms.RecurrenceToolkit.Logging.SQLite\banditoth.Forms.RecurrenceToolkit.Logging.SQLite.csproj", "{7DCCDEDB-9931-4C30-B887-6D12853FF88D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -64,6 +66,10 @@ Global
 		{1C2DC088-E584-4994-80C9-C6C58AA254EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C2DC088-E584-4994-80C9-C6C58AA254EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1C2DC088-E584-4994-80C9-C6C58AA254EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DCCDEDB-9931-4C30-B887-6D12853FF88D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DCCDEDB-9931-4C30-B887-6D12853FF88D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DCCDEDB-9931-4C30-B887-6D12853FF88D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DCCDEDB-9931-4C30-B887-6D12853FF88D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
