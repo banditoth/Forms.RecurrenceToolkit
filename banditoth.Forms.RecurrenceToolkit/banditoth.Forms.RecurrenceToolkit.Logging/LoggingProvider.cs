@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace banditoth.Forms.RecurrenceToolkit.Logging
 {
@@ -19,14 +20,17 @@ namespace banditoth.Forms.RecurrenceToolkit.Logging
 
 		private static void TryExecuteLoggingMethod(Action loggingMethod)
 		{
-			try
+			Task.Run(() =>
 			{
-				loggingMethod.Invoke();
-			}
-			catch (Exception ex)
-			{
-				Console.WriteLine($"Logging failed, throwed an exception: {ex}");
-			}
+				try
+				{
+					loggingMethod.Invoke();
+				}
+				catch (Exception ex)
+				{
+					Console.WriteLine($"Logging failed, throwed an exception: {ex}");
+				}
+			});
 		}
 
 		public static void LogCritical(string criticalMessage, [CallerMemberName] string callerMethod = null, [CallerFilePath] string filePath = null)
