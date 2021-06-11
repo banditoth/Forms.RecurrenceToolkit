@@ -16,6 +16,8 @@ Follow my Xamarin development experiences @ https://www.banditoth.hu/
 | banditoth.Forms.RecurrenceToolkit.Converters | ![nuGet version](https://img.shields.io/nuget/vpre/banditoth.Forms.RecurrenceToolkit.Converters) |
 | banditoth.Forms.RecurrenceToolkit.Identifiers | ![nuGet version](https://img.shields.io/nuget/vpre/banditoth.Forms.RecurrenceToolkit.Identifiers) |
 | banditoth.Forms.RecurrenceToolkit.Logging | ![nuGet version](https://img.shields.io/nuget/vpre/banditoth.Forms.RecurrenceToolkit.Logging) |
+| banditoth.Forms.RecurrenceToolkit.Logging.Console | ![nuGet version](https://img.shields.io/nuget/vpre/banditoth.Forms.RecurrenceToolkit.Logging.Console) |
+| banditoth.Forms.RecurrenceToolkit.Logging.SQLite | ![nuGet version](https://img.shields.io/nuget/vpre/banditoth.Forms.RecurrenceToolkit.Logging.SQLite) |
 
 ## banditoth.Forms.RecurrenceToolkit.MVVM
 ![nuGet version](https://img.shields.io/nuget/vpre/banditoth.Forms.RecurrenceToolkit.MVVM)
@@ -156,6 +158,70 @@ If a translation is not found for example in the Hungarian version of resx file,
 If the translation is not found in the 1st Resource manager, the code will look up in the further resource managers
 If a translation could not be found in any resx files, the result will be ```TranslationMissing_ + the translation key```.
 If an error occurs, ```TranslationError_ + translation key``` will be returned.
+
+
+## banditoth.Forms.RecurrenceToolkit.Logging
+
+| Package name | NuGet status |
+| --- | --- |
+| banditoth.Forms.RecurrenceToolkit.Logging | ![nuGet version](https://img.shields.io/nuget/vpre/banditoth.Forms.RecurrenceToolkit.Logging) |
+| banditoth.Forms.RecurrenceToolkit.Logging.Console | ![nuGet version](https://img.shields.io/nuget/vpre/banditoth.Forms.RecurrenceToolkit.Logging.Console) |
+| banditoth.Forms.RecurrenceToolkit.Logging.SQLite | ![nuGet version](https://img.shields.io/nuget/vpre/banditoth.Forms.RecurrenceToolkit.Logging.SQLite) |
+
+Logging functionnality with Console and SQLite, even your custom  ability.
+
+**Usage**
+
+
+In your ```App.xaml.cs```, initalize the logger like:
+
+```cs
+LoggingProvider.Initalize(
+	// If you have installed the console logger:
+	new ConsoleLogger(),
+	// If you have installed SQLite Logger:
+	new SQLiteLogger()
+	);
+``` 
+
+You can access the logger from anywhere by calling these methods:
+
+```cs
+LoggingProvider.LogCritical("It's a critical message");
+LoggingProvider.LogDebug("It's a debug message");
+LoggingProvider.LogError("It's an error message");
+LoggingProvider.LogException(ex, "It's an exception");
+LoggingProvider.LogInformation("It's an information message");
+LoggingProvider.LogTrace("It's a trace message");
+LoggingProvider.LogTrace(new StackTrace());
+LoggingProvider.LogWarning("It's a warning message");
+``` 
+
+By default, the console and the SQLite logger logs exceptions in error level.
+
+You can implement your own logger by deriving from ```BaseLogger``` class, like:
+
+```cs
+	public class CustomLogger : BaseLogger
+	{
+		public CustomLogger() : base(new LoggerOptions()
+		{
+			IncludeCallerSourceFullFileName = true,
+			IncludeCallerSourceShortFileName = false,
+			ExceptionLevel = Enumerations.LogLevel.Error,
+			IncludeCallerMethodName = true
+		})
+		{
+
+		}
+		
+		public override void LogCritical(string criticalMessage, string callerMethod, string filePath)
+		{
+			// Your own method
+		}
+
+		// .. File continues
+``` 
 
 
 ## banditoth.Forms.RecurrenceToolkit.Converters
