@@ -168,7 +168,7 @@ If an error occurs, ```TranslationError_ + translation key``` will be returned.
 | banditoth.Forms.RecurrenceToolkit.Logging.Console | ![nuGet version](https://img.shields.io/nuget/vpre/banditoth.Forms.RecurrenceToolkit.Logging.Console) |
 | banditoth.Forms.RecurrenceToolkit.Logging.SQLite | ![nuGet version](https://img.shields.io/nuget/vpre/banditoth.Forms.RecurrenceToolkit.Logging.SQLite) |
 
-Logging functionnality with Console and SQLite, even your custom  ability.
+Logging functionnality with Console and SQLite, even your custom implemented logger ability.
 
 **Usage**
 
