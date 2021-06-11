@@ -184,13 +184,14 @@ LoggingProvider.Initalize(
 	);
 ``` 
 
+The logger is including the calling method's name, and the .cs file name in the logs.
 You can access the logger from anywhere by calling these methods:
 
 ```cs
 LoggingProvider.LogCritical("It's a critical message");
 LoggingProvider.LogDebug("It's a debug message");
 LoggingProvider.LogError("It's an error message");
-LoggingProvider.LogException(ex, "It's an exception");
+LoggingProvider.LogException(new Exception(), "It's an exception");
 LoggingProvider.LogInformation("It's an information message");
 LoggingProvider.LogTrace("It's a trace message");
 LoggingProvider.LogTrace(new StackTrace());
@@ -206,10 +207,10 @@ You can implement your own logger by deriving from ```BaseLogger``` class, like:
 	{
 		public CustomLogger() : base(new LoggerOptions()
 		{
-			IncludeCallerSourceFullFileName = true,
-			IncludeCallerSourceShortFileName = false,
-			ExceptionLevel = Enumerations.LogLevel.Error,
-			IncludeCallerMethodName = true
+			IncludeCallerSourceFullFileName = true, // This will print C:/Users/Path/AssemblyFile.cs
+			IncludeCallerSourceShortFileName = false, // This will print AssemblyFile.cs
+			ExceptionLevel = Enumerations.LogLevel.Error, // The LogExceptions calls routed to log to the loglevel set.
+			IncludeCallerMethodName = true // This can print the calling method's name
 		})
 		{
 
@@ -222,7 +223,6 @@ You can implement your own logger by deriving from ```BaseLogger``` class, like:
 
 		// .. File continues
 ``` 
-
 
 ## banditoth.Forms.RecurrenceToolkit.Converters
 ![nuGet version](https://img.shields.io/nuget/vpre/banditoth.Forms.RecurrenceToolkit.Converters)
