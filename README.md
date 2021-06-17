@@ -6,6 +6,10 @@ A toolkit for Xamarin.Forms, inspired by hours of hours reimplementation of the 
 
 Follow my Xamarin development experiences @ https://www.banditoth.hu/
 
+CI with Azure DevOps
+
+![Azure DevOps builds](https://img.shields.io/azure-devops/build/bitfoxhungary/RecurrenceToolkit/5?label=RecurrenceToolkit%20Build%20status)
+
 **Packages**
 
 | Package name | NuGet status |
