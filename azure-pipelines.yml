@@ -23,11 +23,11 @@ steps:
   inputs:
     command: 'build'
     projects: '**/*.csproj'
-    arguments: '--configuration $(buildConfiguration) --output $(Build.StagingDirectory)'
+    arguments: '--configuration $(buildConfiguration) --output $(Build.BinariesDirectory)'
 
 - task: CopyFiles@2
   inputs:
-    SourceFolder: '$(Build.StagingDirectory)'
+    SourceFolder: '$(Build.BinariesDirectory)'
     Contents: '**/*.nupkg'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
