@@ -18,17 +18,18 @@ variables:
 
 #The build has 3 seperate tasks run under 1 step
 steps:
+
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
     projects: '**/*.csproj'
-- task: ArchiveFiles@2
+    arguments: '--configuration $(buildConfiguration) --output $(Build.StagingDirectory)'
+
+- task: CopyFiles@2
   inputs:
-    rootFolderOrFile: '$(Build.BinariesDirectory)/**/*.nupkg'
-    includeRootFolder: true
-    archiveType: 'zip'
-    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
-    replaceExistingArchive: true
+    SourceFolder: '$(Build.StagingDirectory)'
+    Contents: '**/*.nupkg'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
 - task: PublishBuildArtifacts@1
   inputs:
