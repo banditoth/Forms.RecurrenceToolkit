@@ -23,7 +23,8 @@ steps:
     command: 'pack'
     packagesToPack: '**/*.csproj'
     versioningScheme: 'off'
-    packDestination: ''
+    packDestination: '$(Build.ArtifactStagingDirectory)'
+    arguments: '-Build'
 
 - task: PublishBuildArtifacts@1
   inputs:
