@@ -10,6 +10,8 @@ Follow my Xamarin development experiences @ https://www.banditoth.hu/
 
 ![Azure DevOps builds](https://img.shields.io/azure-devops/build/bitfoxhungary/RecurrenceToolkit/5?label=Build%20status)
 
+[Azure DevOps](https://dev.azure.com/bitfoxhungary/RecurrenceToolkit/_build)
+
 **Packages**
 
 | Package name | NuGet status |
@@ -25,6 +27,8 @@ Follow my Xamarin development experiences @ https://www.banditoth.hu/
 
 ## banditoth.Forms.RecurrenceToolkit.MVVM
 ![nuGet version](https://img.shields.io/nuget/vpre/banditoth.Forms.RecurrenceToolkit.MVVM)
+![Nuget](https://img.shields.io/nuget/dt/banditoth.Forms.RecurrenceToolkit.MVVM)
+[View package on NuGet.org](https://www.nuget.org/packages/banditoth.Forms.RecurrenceToolkit.MVVM/)
 
 A ViewModel first driven MVVM Library.
 
@@ -67,6 +71,8 @@ banditoth.Forms.RecurrenceToolkit.MVVM.Navigator.Instance.GetRoot();
 
 ## banditoth.Forms.RecurrenceToolkit.AOP
 ![nuGet version](https://img.shields.io/nuget/vpre/banditoth.Forms.RecurrenceToolkit.AOP)
+![Nuget](https://img.shields.io/nuget/dt/banditoth.Forms.RecurrenceToolkit.AOP)
+[View package on NuGet.org](https://www.nuget.org/packages/banditoth.Forms.RecurrenceToolkit.AOP/)
 
 A pre-release Aspect Orientated tool for Xamarin.
 
@@ -119,6 +125,11 @@ And use it on your methods, like:
     }
 ```
 
+The result should be the following:
+yaaay on enter!
+2021. 06. 23. 21:00
+yaaay on exit
+
 **Important**
 This package is in pre-release state.
 Right now only parameterless constructors can be used for Method decorator attributes.
@@ -127,6 +138,8 @@ Automatic csproj file modification (Adding the target) can be implemented too.
 
 ## banditoth.Forms.RecurrenceToolkit.Multilanguage
 ![nuGet version](https://img.shields.io/nuget/vpre/banditoth.Forms.RecurrenceToolkit.Multilanguage)
+![Nuget](https://img.shields.io/nuget/dt/banditoth.Forms.RecurrenceToolkit.Multilanguage)
+[View package on NuGet.org](https://www.nuget.org/packages/banditoth.Forms.RecurrenceToolkit.Multilanguage/)
 
 A multilanguage translation provider for XAML, and for code behind.
 
@@ -166,11 +179,11 @@ If an error occurs, ```TranslationError_ + translation key``` will be returned.
 
 ## banditoth.Forms.RecurrenceToolkit.Logging
 
-| Package name | NuGet status |
+| Package name | NuGet status | Downloads | Link |
 | --- | --- |
-| banditoth.Forms.RecurrenceToolkit.Logging | ![nuGet version](https://img.shields.io/nuget/vpre/banditoth.Forms.RecurrenceToolkit.Logging) |
-| banditoth.Forms.RecurrenceToolkit.Logging.Console | ![nuGet version](https://img.shields.io/nuget/vpre/banditoth.Forms.RecurrenceToolkit.Logging.Console) |
-| banditoth.Forms.RecurrenceToolkit.Logging.SQLite | ![nuGet version](https://img.shields.io/nuget/vpre/banditoth.Forms.RecurrenceToolkit.Logging.SQLite) |
+| banditoth.Forms.RecurrenceToolkit.Logging | ![nuGet version](https://img.shields.io/nuget/vpre/banditoth.Forms.RecurrenceToolkit.Logging) | ![Nuget](https://img.shields.io/nuget/dt/banditoth.Forms.RecurrenceToolkit.Logging) | [View package on NuGet.org](https://www.nuget.org/packages/banditoth.Forms.RecurrenceToolkit.Logging/) | 
+| banditoth.Forms.RecurrenceToolkit.Logging.Console | ![nuGet version](https://img.shields.io/nuget/vpre/banditoth.Forms.RecurrenceToolkit.Logging.Console) | ![Nuget](https://img.shields.io/nuget/dt/banditoth.Forms.RecurrenceToolkit.Logging.Console) | [View package on NuGet.org](https://www.nuget.org/packages/banditoth.Forms.RecurrenceToolkit.Logging.Console/) |
+| banditoth.Forms.RecurrenceToolkit.Logging.SQLite | ![nuGet version](https://img.shields.io/nuget/vpre/banditoth.Forms.RecurrenceToolkit.Logging.SQLite) | ![Nuget](https://img.shields.io/nuget/dt/banditoth.Forms.RecurrenceToolkit.Logging.SQLite) | [View package on NuGet.org](https://www.nuget.org/packages/banditoth.Forms.RecurrenceToolkit.Logging.SQLite/) |
 
 Logging functionnality with Console and SQLite, even your custom implemented logger ability.
 
@@ -230,6 +243,8 @@ You can implement your own logger by deriving from ```BaseLogger``` class, like:
 
 ## banditoth.Forms.RecurrenceToolkit.Converters
 ![nuGet version](https://img.shields.io/nuget/vpre/banditoth.Forms.RecurrenceToolkit.Converters)
+![Nuget](https://img.shields.io/nuget/dt/banditoth.Forms.RecurrenceToolkit.Converters)
+[View package on NuGet.org](https://www.nuget.org/packages/banditoth.Forms.RecurrenceToolkit.Converters/)
 
 Handy XAML Value converter collection. See the repository for the full converter list.
 
@@ -246,6 +261,8 @@ IsVisible="{Binding Path=NullableData, Converter={converters:NullToFalseConverte
 
 ## banditoth.Forms.RecurrenceToolkit.Identifiers
 ![nuGet version](https://img.shields.io/nuget/vpre/banditoth.Forms.RecurrenceToolkit.Identifiers)
+![Nuget](https://img.shields.io/nuget/dt/banditoth.Forms.RecurrenceToolkit.Identifiers)
+[View package on NuGet.org](https://www.nuget.org/packages/banditoth.Forms.RecurrenceToolkit.Identifiers/)
 
 Generates an unique identifier for the application, which will be stored until the application is being reinstalled, or the application's data being erased.
 Further improvements: - Read existing permanent identifiers from the OS.
