@@ -10,7 +10,7 @@ Follow my Xamarin development experiences @ https://www.banditoth.hu/
 
 ![Azure DevOps builds](https://img.shields.io/azure-devops/build/bitfoxhungary/RecurrenceToolkit/5?label=Build%20status)
 
-[Azure DevOps](https://dev.azure.com/bitfoxhungary/RecurrenceToolkit/_build)
+[View Build pipeline on AzureDevOps](https://dev.azure.com/bitfoxhungary/RecurrenceToolkit/_build)
 
 **Packages**
 
@@ -180,7 +180,7 @@ If an error occurs, ```TranslationError_ + translation key``` will be returned.
 ## banditoth.Forms.RecurrenceToolkit.Logging
 
 | Package name | NuGet status | Downloads | Link |
-| --- | --- |
+| --- | --- | --- | --- |
 | banditoth.Forms.RecurrenceToolkit.Logging | ![nuGet version](https://img.shields.io/nuget/vpre/banditoth.Forms.RecurrenceToolkit.Logging) | ![Nuget](https://img.shields.io/nuget/dt/banditoth.Forms.RecurrenceToolkit.Logging) | [View package on NuGet.org](https://www.nuget.org/packages/banditoth.Forms.RecurrenceToolkit.Logging/) | 
 | banditoth.Forms.RecurrenceToolkit.Logging.Console | ![nuGet version](https://img.shields.io/nuget/vpre/banditoth.Forms.RecurrenceToolkit.Logging.Console) | ![Nuget](https://img.shields.io/nuget/dt/banditoth.Forms.RecurrenceToolkit.Logging.Console) | [View package on NuGet.org](https://www.nuget.org/packages/banditoth.Forms.RecurrenceToolkit.Logging.Console/) |
 | banditoth.Forms.RecurrenceToolkit.Logging.SQLite | ![nuGet version](https://img.shields.io/nuget/vpre/banditoth.Forms.RecurrenceToolkit.Logging.SQLite) | ![Nuget](https://img.shields.io/nuget/dt/banditoth.Forms.RecurrenceToolkit.Logging.SQLite) | [View package on NuGet.org](https://www.nuget.org/packages/banditoth.Forms.RecurrenceToolkit.Logging.SQLite/) |
