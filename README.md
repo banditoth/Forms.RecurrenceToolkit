@@ -4,7 +4,12 @@
 
 A toolkit for Xamarin.Forms, inspired by hours of hours reimplementation of the same navigation logic, converters, and the other tools needed to build a mobile app idea.
 
-Follow my Xamarin development experiences @ https://www.banditoth.net/
+__Discontinued__
+Just as Xamarin.Forms is changing to a .NET MAUI, banditoth.Forms.RecurrenceToolkit will also undergo a change. As of today, I do not plan to develop any new functionality in the aforementioned package. Some parts of the package will be developed for .NET MAUI compatibility. You will be able to find the new packages in the future with the banditoth.MAUI prefix, which will also be available on GitHub.
+I would like to thank you for the more than 2700 downloads.
+Bug fixes will continue to be made, so if someone actually uses this for a live application, in that case no worries.
+
+Follow my .NET MAUI and Xamarin development experiences @ https://www.banditoth.net/
 
 **Azure DevOps**
 
