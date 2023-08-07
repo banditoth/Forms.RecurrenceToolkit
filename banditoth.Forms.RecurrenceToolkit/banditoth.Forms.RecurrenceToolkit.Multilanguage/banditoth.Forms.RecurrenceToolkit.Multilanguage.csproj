@@ -23,7 +23,7 @@
 		<FileVersion>1.1.1</FileVersion>
 	</PropertyGroup>
 	<ItemGroup>
-		<PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
+		<PackageReference Include="Xamarin.Essentials" Version="1.7.7" />
 		<PackageReference Include="Xamarin.Forms" Version="5.0.0.2578" />
 	</ItemGroup>
 	<ItemGroup>
