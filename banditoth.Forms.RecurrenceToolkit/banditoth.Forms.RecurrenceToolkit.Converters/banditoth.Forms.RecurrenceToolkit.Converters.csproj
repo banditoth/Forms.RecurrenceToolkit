@@ -27,7 +27,7 @@
 		<Description>A Xamarin.Forms friendly, handy XAML Value converter collection.</Description>
 	</PropertyGroup>
 	<ItemGroup>
-		<PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
+		<PackageReference Include="Xamarin.Forms" Version="5.0.0.2578" />
 	</ItemGroup>
 	<ItemGroup>
 		<None Include="..\..\Files\toolkit_icon.png">
