@@ -27,7 +27,7 @@
 		<Description>A Xamarin.Forms friendly,  pre-release AOP (Aspect Orientated) tool</Description>
 	</PropertyGroup>
 	<ItemGroup>
-		<PackageReference Include="Mono.Cecil" Version="0.11.3" />
+		<PackageReference Include="Mono.Cecil" Version="0.11.5" />
 		<PackageReference Include="Microsoft.Build.Utilities.Core" Version="17.6.3" />
 	</ItemGroup>
 	<ItemGroup>
